@@ -162,14 +162,14 @@
 								<!--循环遍历已有的课程评论 -->
 								{% for i in record %}
 								<div class="single-commnet clearfix">
-									<img src="../static/images/blog/18.jpg" alt="" class="float-left">
+									<img src="../static/images/blog/19.jpg" alt="" class="float-left">
 									<div class="comment float-left border">
 										<div class="clearfix">
 											<h6 class="float-left">{{u_name[0]}}</h6>
 											<span class="float-right">{{i[6]}}</span>
 										</div>
 										{% if i[7] > -1 %}
-										<p>Reply to #{{i[7]}}</p>
+											<p>Reply to #{{i[7]}}</p>
 										{% else %}
 										{% endif %}
 										<p>{{i[5]}}</p>
@@ -178,7 +178,7 @@
 											<li><a href="#"><i class="flaticon-heart"></i> 12</a> </li>
 											<li><a href="#"><i class="fa fa-share" aria-hidden="true"></i> Reply</a></li>
 										</ul>
-										<p>#{{i[7]}}</p>
+										<!--<p>#{{i[7]}}</p>-->
 									</div> <!-- /.comment -->
 								</div> <!-- /.single-commnet -->
 								{% endfor %}

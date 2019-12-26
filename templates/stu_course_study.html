@@ -115,12 +115,12 @@
 						<div class="single-block float-left tran3s">
 							<i class="flaticon-people"></i>
 							<h5>进入课程论坛</h5>
-							<a  class="tran3s"><i class="flaticon-arrows"></i></a>
+							<a onclick="window.location.href='{{ url_for("discussion",c_id=u,u_id = v) }}'"class="tran3s"><i class="flaticon-arrows"></i></a>
 						</div> <!-- /.single-block -->
 						<div class="single-block float-left tran3s">
 							<i class="flaticon-compose"></i>
 							<h5>进入课程评价</h5>
-							<a  class="tran3s"><i class="flaticon-arrows"></i></a>
+							<a onclick="window.location.href='{{ url_for("evaluation",c_id = u)}}'"class="tran3s"><i class="flaticon-arrows"></i></a>
 						</div> <!-- /.single-block -->
 						<div class="single-block float-left tran3s">
 							<i class="flaticon-comments"></i>
