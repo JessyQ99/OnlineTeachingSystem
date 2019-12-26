@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="cn">
+	<head>
+		<meta charset="UTF-8">
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Eskul - Responsive Bootstrap  Education HTML5 Template</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href={{ url_for('static', filename='images/fav-icon/icon.png') }}>
+
+
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href={{ url_for('static',filename='css/style.css') }}>
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href={{ url_for('static',filename='css/responsive.css') }}>
+
+
+		<!-- Fix Internet Explorer ______________________________________-->
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src={{ url_for('static', filename='vendor/html5shiv.js') }}></script>
+			<script src={{ url_for('static', filename='vendor/respond.js') }}></script>
+		<![endif]-->
+
+			
+	</head>
+
+	<body>
+        {% with messages = get_flashed_messages(with_categories=True)%}
+            {% if messages %}
+                <ul class="flash">
+                    {% if messages[0][0]=='error' %}
+                        <div class="alert alert-danger" style="text-align: center">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <strong>{{ messages[0][1] }}</strong>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-success" style="text-align: center">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <strong>{{ messages[0][1] }}</strong>
+                        </div>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+		<div class="main-page-wrapper">
+
+			<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+			</div>
+
+
+
+			<!-- 
+			=============================================
+				Theme Header
+			============================================== 
+			-->
+			<header class="theme-menu-wrapper menu-style-one">
+				<div class="container">
+					<div class="header-wrapper clearfix">
+						<!-- Logo -->
+						<div class="logo float-left tran4s"><a href="index.html"><img src={{ url_for('static', filename='images/logo/logo.png') }} alt="Logo"></a></div>
+
+						<!-- ============================ Theme Menu ========================= -->
+						<nav class="theme-main-menu float-right navbar" id="mega-menu-wrapper">
+							<!-- Brand and toggle get grouped for better mobile display -->
+						   <div class="navbar-header">
+						     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+						       <span class="sr-only">Toggle navigation</span>
+						       <span class="icon-bar"></span>
+						       <span class="icon-bar"></span>
+						       <span class="icon-bar"></span>
+						     </button>
+						   </div>
+						   <!-- Collect the nav links, forms, and other content for toggling -->
+						   <div class="collapse navbar-collapse" id="navbar-collapse-1">
+								<ul class="nav">
+									<li class="dropdown-holder menu-list"><a href="index.html" class="tran3s">Home</a>
+										<ul class="sub-menu">
+											<li><a href="index.html">Home version one</a></li>
+											<li><a href="index-2.html">Home version Two</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-holder menu-list"><a href="#" class="tran3s">课程</a>
+										<ul class="sub-menu">
+											<li><a href="course-grid.html">课程网格</a></li>
+											<li><a href="course-list.html">课程列表</a></li>
+											<li><a href="source_control.html">课程详细</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-holder menu-list"><a href="#" class="tran3s">页面</a>
+										<ul class="sub-menu width-half">
+											<li><a href="about-us.html">关于我们</a></li>
+											<li><a href="our-teacher.html">我们的老师</a></li>
+											<li><a href="teachers-profile.html">教师简介</a></li>
+											<li><a href="faq.html">常见问题页</a></li>
+											<li><a href="404.html">404</a></li>
+											<li><a href="sign-up.html">注册</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-holder menu-list"><a href="#" class="tran3s">事件</a>
+										<ul class="sub-menu">
+											<li><a href="event-list.html">事件列表</a></li>
+											<li><a href="event-grid.html">事件网格</a></li>
+											<li><a href="event-details.html">活动单</a></li>
+										</ul>
+									</li>
+									<li class="dropdown-holder menu-list"><a href="#" class="tran3s">博客</a>
+										<ul class="sub-menu">
+											<li><a href="blog-grid.html">博客网格</a></li>
+											<li><a href="blog-list.html">博客列表</a></li>
+											<li><a href="blog-details.html">博客详细</a></li>
+										</ul>
+									</li>
+									<li><a href="contact-us.html" class="tran3s">联系我们</a></li>
+									<li class="login"><button class="tran3s" data-toggle="modal" data-target=".signInModal"><i class="flaticon-lock"></i> 登录</button></li>
+								</ul>
+						   </div><!-- /.navbar-collapse -->
+						</nav> <!-- /.theme-main-menu -->
+					</div> <!-- /.header-wrapper -->
+				</div>
+			</header> <!-- /.theme-menu-wrapper -->
+			
+			<!-- 
+			=============================================
+				Theme Inner Banner
+			============================================== 
+			-->
+			<div class="inner-banner">
+				<div class="opacity">
+					<div class="container">
+						<ul>
+							<li><a href="index.html" class="tran3s">Home</a></li>
+							<li>/</li>
+							<li>Courses</li>
+						</ul>
+					</div> <!-- /.container -->
+				</div> <!-- /.opacity -->
+			</div> <!-- /.inner-banner -->
+
+
+			<!-- 
+			=============================================
+				Course Details
+			============================================== 
+			-->
+			<div class="course-details">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-xs-12">
+							<div class="details-wrapper">
+								<div class="course-title">
+									<h2>{{ request.cookies.get('course_name') }}</h2>
+									<span>发布于 {{ request.cookies.get('date') }}</span>
+								</div> <!-- /.course-title -->
+								<div class="course-info row">
+
+								<div class="curriculum-panel">
+									<div class="clearfix">
+										<h3 class="float-left">课程资源</h3>
+										<ul class="float-right">
+                                            {% if request.cookies.get('user_type') == 'T' or request.cookies.get('user_type') == 'A' %}
+                                            <li><button class="tran3s" data-toggle="modal" data-target=".chaptersModal" style="background-color: #FDFFFF"> 修改章节信息</button></li>
+                                            <li><button class="tran3s" data-toggle="modal" data-target=".uploadModal" style="background-color: #FDFFFF"> 上传</button></li>
+                                            {% endif %}
+											<li><span>{{ number }}</span> 个章节</li>
+										</ul>
+									</div>
+									<div class="panel-group theme-accordion" id="accordionTwo">
+                                      {% if number %}
+                                         {% for i in range(number) %}
+                                             {% set link= "collapse"~loop.index~loop.index%}
+									  <div class="panel">
+                                          {% if loop.first %}
+									    <div class="panel-heading active-panel">
+                                           {% else %}
+                                        <div class="panel-heading">
+                                           {% endif %}
+									      <h5 class="panel-title">
+									        <a data-toggle="collapse" data-parent="#accordionTwo" href="{{ "#"+link }}" class="clearfix">
+										        <h6 class="float-left">
+										        	<span>章节 {{ loop.index }}</span>
+										        	{% if chapters %}
+                                                        {% set outer_loop=loop %}
+                                                        {% for item in chapters %}
+                                                            {% if item[1] == outer_loop.index%}
+                                                                {{ item[2] }}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+										        </h6>
+									        </a>
+									      </h5>
+									    </div>
+                                        {% if loop.first %}
+									    <div id= "{{ link }}" class="panel-collapse collapse in" >
+                                        {% else %}
+                                        <div id= "{{ link }}" class="panel-collapse collapse" >
+                                        {% endif %}
+									      <div class="panel-body">
+									      	<ul>
+                                                {% for item in files[loop.index0] %}
+                                                    {% if item[14]==0 %}
+                                                        <li class="clearfix">
+                                                            <span class="float-left"><a href="{{ url_for('getfile', filename=item[8]~'.'~item[12]) }}" class="tran3s"><i class="fa fa-file-text-o" aria-hidden="true"></i> {{ item[8]~'.'~item[12] }}</a></span>
+                                                            <span class="float-right">{{ item[10]/1000 }}KB</span>
+															{% if item[7] %}
+															<br>
+                                                            <span class="float-left">{{ item[7] }}</span>
+                                                            {% endif %}
+                                                        {% if request.cookies.get('user_type') == 'T' or request.cookies.get('user_type') == 'A' %}
+                                                            <br><span class="float-right"><button class="tran3s" data-toggle="modal" data-target=".inforModal" id="{{ item[8]~'.'~item[12] }}" style="background-color: #FDFFFF" onclick="getname()"> 修改</button></span>
+                                                        {% endif %}
+                                                        </li>
+                                                    {% elif item[12]=='pdf' %}
+                                                        <li class="clearfix">
+                                                            <span class="float-left"><i class="fa fa-play-circle" aria-hidden="true"></i>{{ item[8]~'.'~item[12] }}<a data-fancybox href="{{ url_for('show', filename=item[8]~'.'~item[12]) }}" class="tran3s preview p-bg-color">Preview</a></span>
+                                                            <span class="float-right">{{ item[10]/1000 }}KB</span>
+                                                            {% if item[7] %}
+                                                                <br>
+                                                                <span class="float-left">{{ item[7] }}</span>
+                                                            {% endif %}
+                                                        {% if request.cookies.get('user_type') == 'T' or request.cookies.get('user_type') == 'A' %}
+                                                            <br><span class="float-right"><button class="tran3s" data-toggle="modal" data-target=".inforModal" id="{{ item[8]~'.'~item[12] }}" style="background-color: #FDFFFF" onclick="getname()"> 修改</button></span>
+                                                        {% endif %}
+                                                        </li>
+                                                    {% else %}
+                                                        <li class="clearfix">
+                                                            <span class="float-left"><i class="fa fa-play-circle" aria-hidden="true"></i> {{ item[8]~'.'~item[12] }} <a data-fancybox href="{{ url_for('play', filename=item[8]~'.'~item[12]) }}" class="tran3s preview p-bg-color">Preview </a></span>
+                                                            <span class="float-right">{{ (item[11]//60) ~":"~(item[11]%60)}}min</span>
+                                                            <br>
+                                                            <span class="float-right">{{ item[10]/1000 }}KB</span>
+                                                                {% if item[7] %}
+                                                                    <br>
+                                                                    <span class="float-left">{{ item[7] }}</span>
+                                                                {% endif %}
+                                                        {% if request.cookies.get('user_type') == 'T' or request.cookies.get('user_type') == 'A' %}
+                                                            <br><span class="float-right"><button class="tran3s" data-toggle="modal" data-target=".inforModal" id="{{ item[8]~'.'~item[12] }}" style="background-color: #FDFFFF" onclick="getname()"> 修改</button></span>
+                                                        {% endif %}
+                                                        </li>
+                                                    {% endif %}
+                                                {% endfor %}
+									      	</ul>
+									      </div>
+									    </div>
+									  </div> <!-- /panel 1 -->
+                                            {% endfor %}
+
+                                      {% endif %}
+									</div> <!-- end #accordionTwo -->
+								</div> <!-- End of .curriculum-panel -->
+                </div> <!-- /.details-wrapper -->
+            </div> <!-- /.col- -->
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+			</div> <!-- /.our-course -->
+
+			<!-- 
+			=============================================
+				Footer
+			============================================== 
+			-->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<div class="footer-logo">
+								<a href="index.html"><img src={{ url_for('static',filename='images/logo/logo2.png') }} alt="Logo"></a>
+								<ul>
+									<li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="" class="tran3s"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+									<li><a href="" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-3 footer-list">
+							<h6>公司</h6>
+							<ul>
+								<li><a href="about-us.html" class="tran3s">关于我们</a></li>
+								<li><a href="blog-grid.html" class="tran3s">博客</a></li>
+								<li><a href="#" class="tran3s">成为老师</a></li>
+								<li><a href="contact-us.html" class="tran3s">联系</a></li>
+								<li><a href="faq.html" class="tran3s">常见问题与措施</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-3 footer-list">
+							<h6>产品</h6>
+							<ul>
+								<li><a href="#" class="tran3s">教育包</a></li>
+								<li><a href="#" class="tran3s">启蒙</a></li>
+								<li><a href="#" class="tran3s">功能与技巧</a></li>
+								<li><a href="#" class="tran3s">价格</a></li>
+								<li><a href="#" class="tran3s">销售您的产品</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 col-sm-6 footer-list">
+							<h6>关于我们</h6>
+							<ul>
+								<li><a href="blog-list.html" class="tran3s">博客</a></li>
+								<li><a href="#" class="tran3s">电话</a></li>
+								<li><a href="#" class="tran3s">职位</a></li>
+								<li><a href="#" class="tran3s">反馈</a></li>
+							</ul>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 footer-subscribe">
+							<h6>订阅我们</h6>
+							<form action="#">
+								<input type="text" placeholder="您的邮箱">
+								<button class="tran3s p-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
+							</form>
+						</div>
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+
+			</footer>
+
+
+			<!-- Sign-in Modal -->
+			<div class="modal fade signInModal theme-modal-box" role="dialog">
+				<div class="modal-dialog">
+				    <!-- Modal content-->
+				    <div class="modal-content">
+					    <div class="modal-body">
+					        <h3>Login with Social Networks</h3>
+					        <ul class="clearfix">
+					        	<li class="float-left"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a></li>
+					        	<li class="float-left"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a></li>
+					        	<li class="float-left"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+					        	<li class="float-left"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+					        </ul>
+					        <form action="#">
+					        	<h3>Login with Site Account</h3>
+					        	<div class="wrapper">
+					        		<input type="text" placeholder="Username or Email">
+					        		<input type="password" placeholder="Password">
+					        		<ul class="clearfix">
+										<li class="float-left">
+											<input type="checkbox" id="remember">
+											<label for="remember">Remember Me</label>
+										</li>
+										<li class="float-right"><a href="#" class="s-color">Lost Your Password?</a></li>
+									</ul>
+									<button class="p-bg-color hvr-trim">Login</button>
+					        	</div>
+					        </form>
+					        <div><a href="sign-up.html" class="p-color tran3s">Not an account?? Sign Up</a></div>
+					    </div> <!-- /.modal-body -->
+				    </div> <!-- /.modal-content -->
+				</div> <!-- /.modal-dialog -->
+			</div> <!-- /.signInModal -->
+
+            <div class="modal fade uploadModal theme-modal-box" role="dialog">
+				<div class="modal-dialog">
+				    <!-- Modal content-->
+				    <div class="modal-content">
+					    <div class="modal-body">
+					        <form action={{ url_for('upload_file')}} method="post" enctype="multipart/form-data" id="upload">
+					        	<h3>上传本地文件</h3>
+					        	<div class="wrapper">
+					        		<input type="file" name="file" required>
+                                    <label>所属章节： </label><select name="sel">
+                                    {% for i in range(number) %}
+                                        <option value="{{ loop.index }}">章节{{ loop.index }}</option>
+                                    {% endfor %}
+                                </select>
+                                    <p><label>资源简介：</label><input name="description" type="text" placeholder="description"></p>
+                                    <ul class="clearfix">
+										<li class="float-left">
+											<input type="checkbox" id="res" name="restriction">
+											<label for="res">允许游客浏览和下载</label>
+										</li>
+									</ul>
+									<button class="p-bg-color hvr-trim" type="submit" form="upload" value="Submit">上传</button>
+					        	</div>
+					        </form>
+					    </div>
+				    </div>
+				</div>
+			</div>
+
+            <div class="modal fade chaptersModal theme-modal-box" role="dialog">
+				<div class="modal-dialog">
+				    <!-- Modal content-->
+				    <div class="modal-content">
+					    <div class="modal-body">
+					        <form action={{ url_for('chapters_modify', course_id=c_id) }} method="post" enctype="multipart/form-data" id="chapters">
+					        	<h3>章节信息修改</h3>
+					        	<div class="wrapper">
+                                    <label>课程总章节数： </label><input type="text" name="numberofchapters" placeholder={{ number }}>
+                                    {% for i in range(number) %}
+                                        <label>{{ "章节"~loop.index}}</label><input name="{{ "chapter"~loop.index }}" type="text" placeholder="description">
+                                    {% endfor %}
+					        		<button class="p-bg-color hvr-trim" type="submit" form="chapters" value="Submit">确定</button>
+					        	</div>
+					        </form>
+					    </div>
+				    </div>
+				</div>
+			</div>
+                        <script>
+                            function modify(){
+                                document.getElementById('information').action="{{ url_for('modify', course_id=c_id) }}";
+                                document.getElementById('information').submit();
+                            }
+
+                            function del(){
+                                document.getElementById('information').action="{{ url_for('delete', course_id=c_id) }}";
+                                document.getElementById('information').submit();
+                            }
+
+                            function getname(){
+                                var event = window.event;
+                                var obj = event.target;
+                                document.getElementById('sourcename').value=$(obj).attr('id');
+                            }
+
+                        </script>
+
+            <div class="modal fade inforModal theme-modal-box" role="dialog">
+				<div class="modal-dialog">
+				    <!-- Modal content-->
+				    <div class="modal-content">
+					    <div class="modal-body">
+					        <form method="post" enctype="multipart/form-data" id="information">
+					        	<h3>资源信息修改</h3>
+					        	<div class="wrapper">
+                                    <input type="text" style="visibility: hidden;" id="sourcename" name="source">
+                                    <label>所属章节： </label><input type="text" name="chapters" placeholder="如果不修改可不填写">
+                                    <label>资源简介：</label><input name="description" type="text" placeholder="如果不修改可不填写">
+                                    <ul class="clearfix">
+										<li class="float-left">
+											<input type="checkbox" id="rest" name="restriction">
+											<label for="rest">允许游客浏览和下载</label>
+										</li>
+									</ul>
+					        		<button class="p-bg-color hvr-trim" onclick="modify()">确定修改</button>
+                                    <br>
+                                    <button class="p-bg-color hvr-trim" onclick="del()">删除资源</button>
+					        	</div>
+					        </form>
+					    </div>
+				    </div>
+				</div>
+			</div>
+	        <!-- Scroll Top Button -->
+			<button class="scroll-top tran3s">
+				<i class="fa fa-angle-up" aria-hidden="true"></i>
+			</button>
+		<!-- Js File_________________________________ -->
+
+		<!-- j Query -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/jquery.2.2.3.min.js') }}></script>
+		<!-- Bootstrap Select JS -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/bootstrap-select/dist/js/bootstrap-select.js') }}></script>
+
+		<!-- Bootstrap JS -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/bootstrap/bootstrap.min.js') }}></script>
+
+		<!-- Vendor js _________ -->
+		<!-- Camera Slider -->
+		<script type='text/javascript' src={{ url_for('static',filename='vendor/Camera-master/scripts/jquery.mobile.customized.min.js') }}></script>
+	    <script type='text/javascript' src={{ url_for('static',filename='vendor/Camera-master/scripts/jquery.easing.1.3.js') }}></script>
+	    <script type='text/javascript' src={{ url_for('static',filename='vendor/Camera-master/scripts/camera.min.js') }}></script>
+	    <!-- Mega menu  -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/bootstrap-mega-menu/js/menu.js') }}></script>
+		
+		<!-- WOW js -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/WOW-master/dist/wow.min.js') }}></script>
+		<!-- owl.carousel -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/owl-carousel/owl.carousel.min.js') }}></script>
+		<!-- js count to -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/Counter/jquery.counterup.min.js') }}></script>
+		<script src={{ url_for('static',filename='vendor/Counter/jquery.waypoints.min.js') }}></script>
+		<!-- js ui -->
+		<script src={{ url_for('static',filename='vendor/jquery-ui/jquery-ui.min.js') }}></script>
+		<!-- Fancybox -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}></script>
+
+		<!-- Theme js -->
+		<script type="text/javascript" src={{ url_for('static',filename='js/theme.js') }}></script>
+
+		</div> <!-- /.main-page-wrapper -->
+	</body>
+</html>

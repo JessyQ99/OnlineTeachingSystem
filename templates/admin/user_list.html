@@ -1,0 +1,78 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+    <section class="content-header">
+        <h1>教学管理系统</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 用户管理</a></li>
+            <li class="active">用户列表</li>
+        </ol>
+    </section>
+    <section class="content" id="showcontent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">用户列表</h3>
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <form method="post"  name="userform" enctype="multipart/form-data">
+                                       <span><a href="javascript:;" class="file">名单<input type="file"  name="userlist"></a></span>
+                                        <button class="ant-btn ant-btn-blue " type="submit">导入</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-body table-responsive no-padding">
+                        {% include 'admin/alert_info.html' %}
+
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th>用户名</th>
+                                <th>学工号</th>
+                                <th>类型</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>所属机构</th>
+                                <th>操作事项</th>
+                            </tr>
+                            {% for user in page_users.items %}
+                                <tr>
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.ID }}</td>
+                                    <td>{{ user.type }}</td>
+                                    <td>{{ user.age }}</td>
+                                    <td>{{ user.gender }}</td>
+                                    <td>{{ user.affiliation }}</td>
+                                    <td>
+                                        &nbsp;
+                                        <a class="label label-danger" href="{{ url_for('user_delete', delete_id=user.name) }}">删除</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box-footer clearfix">
+                        {% import 'admin/pagination.html' as pg %}
+                        {{ pg.render_pagination(page_users, 'user_list') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        	<!-- Sign-in Modal -->
+
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script>
+        // 激活菜单栏
+        $(document).ready(function () {
+            $("#g-5").addClass('active');
+            $("#g-5-1").addClass('active');
+        })
+    </script>
+{% endblock %}

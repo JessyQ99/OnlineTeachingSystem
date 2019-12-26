@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Eskul - Responsive Bootstrap  Education HTML5 Template</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href={{ url_for('static', filename='images/fav-icon/icon.png') }}>
+
+
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href={{ url_for('static',filename='css/style.css') }}>
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href={{ url_for('static',filename='css/responsive.css') }}>
+
+
+		<!-- Fix Internet Explorer ______________________________________-->
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src={{ url_for('static', filename='vendor/html5shiv.js') }}></script>
+			<script src={{ url_for('static', filename='vendor/respond.js') }}></script>
+		<![endif]-->
+	</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=True)%}
+            {% if messages %}
+                <ul class="flash">
+                    {% if messages[0][0]=='error' %}
+                        <div class="alert alert-danger" style="text-align: center">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <strong>{{ messages[0][1] }}</strong>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-success" style="text-align: center">
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                            <strong>{{ messages[0][1] }}</strong>
+                        </div>
+                    {% endif %}
+                </ul>
+            {% endif %}
+    {% endwith %}
+
+<!-- j Query -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/jquery.2.2.3.min.js') }}></script>
+		<!-- Bootstrap Select JS -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/bootstrap-select/dist/js/bootstrap-select.js') }}></script>
+
+		<!-- Bootstrap JS -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/bootstrap/bootstrap.min.js') }}></script>
+
+		<!-- Vendor js _________ -->
+		<!-- Camera Slider -->
+		<script type='text/javascript' src={{ url_for('static',filename='vendor/Camera-master/scripts/jquery.mobile.customized.min.js') }}></script>
+	    <script type='text/javascript' src={{ url_for('static',filename='vendor/Camera-master/scripts/jquery.easing.1.3.js') }}></script>
+	    <script type='text/javascript' src={{ url_for('static',filename='vendor/Camera-master/scripts/camera.min.js') }}></script>
+	    <!-- Mega menu  -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/bootstrap-mega-menu/js/menu.js') }}></script>
+
+		<!-- WOW js -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/WOW-master/dist/wow.min.js') }}></script>
+		<!-- owl.carousel -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/owl-carousel/owl.carousel.min.js') }}></script>
+		<!-- js count to -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/Counter/jquery.counterup.min.js') }}></script>
+		<script src={{ url_for('static',filename='vendor/Counter/jquery.waypoints.min.js') }}></script>
+		<!-- js ui -->
+		<script src={{ url_for('static',filename='vendor/jquery-ui/jquery-ui.min.js') }}></script>
+		<!-- Fancybox -->
+		<script type="text/javascript" src={{ url_for('static',filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}></script>
+
+		<!-- Theme js -->
+		<script type="text/javascript" src={{ url_for('static',filename='js/theme.js') }}></script>
+</body>
+</html>

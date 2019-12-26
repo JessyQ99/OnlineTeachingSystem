@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>高校教学管理系统</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href="../static/images/fav-icon/icon.png">
+
+
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+
+
+		<!-- Fix Internet Explorer ______________________________________-->
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="../static/vendor/html5shiv.js"></script>
+			<script src="../static/vendor/respond.js"></script>
+		<![endif]-->
+
+			
+	</head>
+
+	<body>
+		<div class="main-page-wrapper">
+
+			<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+			</div>
+
+
+
+			<!-- 
+			=============================================
+				Theme Header
+			============================================== 
+			-->
+
+			
+			<!-- 
+			=============================================
+				Theme Inner Banner
+			============================================== 
+			-->
+			<div class="inner-banner">
+				<div class="opacity">
+					<div class="container">
+						<h2>User Profile</h2>
+						<ul>
+							<li><a href="{{url_for('user_info')}}"  class="tran3s">返回</a></li>
+						</ul>
+					</div> <!-- /.container -->
+				</div> <!-- /.opacity -->
+			</div> <!-- /.inner-banner -->
+
+
+
+			<div class="signUpModal theme-modal-box">
+				<div class="modal-dialog">
+					{% include 'user/alert-info.html' %}
+				    <!-- Modal content-->
+				    <div class="modal-content">
+					    <div class="modal-body">
+							<h3>修改信息</h3>
+					        <form method="post" >
+					        	<div class="wrapper">
+									<input type="text"  name="account" id="user"  placeholder="Account:{{current_user.name}}" disabled>
+									<input type="number" name="id" id="uid" placeholder="ID:{{current_user.ID}}" disabled>
+									<input type="number" name="age" placeholder="Age:{{current_user.age}}" min="0" max="200">
+									<h6>Gender:</h6>
+									<label for="male">男:</label>
+									<input type="radio" name="gender" value="M" id="male" style="width:20px; height:20px">
+									<br/>
+									<label for="female">女:</label>
+									<input type="radio" name="gender" value="F" id="female" style="width:20px; height:20px">
+									<input type="text" name="aff" id="jigou" placeholder="Affiliation:{{current_user.affiliation}}" maxlength="20">
+									<button type="submit" name="btn" class="p-bg-color hvr-trim">确认修改</button>
+					        	</div>
+					        </form>
+					    </div> <!-- /.modal-body -->
+				    </div> <!-- /.modal-content -->
+				</div> <!-- /.modal-dialog -->
+			</div> <!-- /.signUpModal -->
+
+
+		<!-- Js File_________________________________ -->
+
+		<!-- j Query -->
+		<script type="text/javascript" src="../static/vendor/jquery.2.2.3.min.js"></script>
+		<!-- Bootstrap Select JS -->
+		<script type="text/javascript" src="../static/vendor/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
+		<!-- Bootstrap JS -->
+		<script type="text/javascript" src="../static/vendor/bootstrap/bootstrap.min.js"></script>
+
+		<!-- Vendor js _________ -->
+		<!-- Camera Slider -->
+		<script type='text/javascript' src='../static/vendor/Camera-master/scripts/jquery.mobile.customized.min.js'></script>
+	    <script type='text/javascript' src='../static/vendor/Camera-master/scripts/jquery.easing.1.3.js'></script>
+	    <script type='text/javascript' src='../static/vendor/Camera-master/scripts/camera.min.js'></script>
+	    <!-- Mega menu  -->
+		<script type="text/javascript" src="../static/vendor/bootstrap-mega-menu/js/menu.js"></script>
+		
+		<!-- WOW js -->
+		<script type="text/javascript" src="../static/vendor/WOW-master/dist/wow.min.js"></script>
+		<!-- owl.carousel -->
+		<script type="text/javascript" src="../static/vendor/owl-carousel/owl.carousel.min.js"></script>
+		<!-- js count to -->
+		<script type="text/javascript" src="../static/vendor/Counter/jquery.counterup.min.js"></script>
+		<script src="../static/vendor/Counter/jquery.waypoints.min.js"></script>
+
+		<!-- Theme js -->
+		<script type="text/javascript" src="../static/js/theme.js"></script>
+
+
+		</div> <!-- /.main-page-wrapper -->
+	</body>
+
+</html>
+

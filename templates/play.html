@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>{{ name }}</title>
+
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.media.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var w = document.documentElement.clientWidth;
+        var h = document.documentElement.clientHeight;
+        w=w-10;
+        document.getElementById('video').style.width=w;
+        document.getElementById('video').style.height=h;
+    });
+</script>
+
+</head>
+<body>
+ <div class="panel panel-primary">
+   <div class="panel-heading" align="center">
+      <h2>在线播放</h2>
+   </div>
+   <div class="panel-body">
+	  <video controls id="video">
+          <source src="{{ url }}" type="{{ "video/"~tp }}">
+      </video>
+   </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+    <section class="content-header">
+        <h1>教学管理系统</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 课程讨论管理</a></li>
+            <li class="active">课程讨论留言列表</li>
+        </ol>
+    </section>
+
+
+    <section class="content" id="showcontent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">课程讨论留言列表</h3>
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body table-responsive no-padding">
+                        {% include 'admin/alert_info.html' %}
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th>发言编号</th>
+                                <th>用户编号</th>
+                                <th>用户</th>
+                                <th>课程</th>
+                                <th>章节</th>
+                                <th>留言内容</th>
+                                <th>回复对象</th>
+                                <th>时间</th>
+                            </tr>
+                            {% for dis in page_discussions.items %}
+                                <tr>
+                                    <th>{{dis.num}}</th>
+                                    <td>{{ dis.uid }}</td>
+                                    <td>{{ dis.uname }}</td>
+                                    <td>{{dis.cid}}</td>
+                                    <td>{{dis.chapter}}</td>
+                                    <td>{{dis.content}}</td>
+                                    <td>{{dis.replyto}}</td>
+                                    <td>{{dis.time}}</td>
+                                      <td>
+                                        <a class="label label-danger" href="{{ url_for('discussion_delete', delete_id=dis.num,uid=dis.uid) }}">删除</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="box-footer clearfix">
+                        {% import 'admin/pagination.html' as pg %}
+                        {{ pg.render_pagination(page_discussions, 'discussion_list') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script>
+        // 激活菜单栏
+        $(document).ready(function () {
+            $("#g-10").addClass('active');
+            $("#g-10-2").addClass('active');
+        })
+    </script>
+{% endblock %}

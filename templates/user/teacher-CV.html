@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- For IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- For Resposive Device -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>高校教学管理平台</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+
+
+		<!-- Main style sheet -->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+		<!-- responsive style sheet -->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/responsive.css')}}">
+
+
+		<!-- Fix Internet Explorer ______________________________________-->
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="{{url_for('static',filename='vendor/html5shiv.js')}}"></script>
+			<script src="{{url_for('static',filename='vendor/respond.js')}}"></script>
+		<![endif]-->
+			 <style type="text/css">
+			.file {
+				width:90px;
+				height:30px;
+				position: relative;
+				display: inline-block;
+				background: #1B1D3D;
+				border: 1px solid #99D3F5;
+				border-radius: 4px;
+				padding: 4px 12px;
+				margin:2px 2px
+				overflow: hidden;
+				color: #FFFFFF;
+				text-decoration: none;
+				text-indent: 0;
+				line-height: 20px;
+			}
+			.file input {
+				position: absolute;
+				font-size: 100px;
+				right: 0;
+				top: 0;
+				opacity: 0;
+			}
+			.file:hover {
+				background: #AADFFD;
+				border-color: #78C3F3;
+				color: #004974;
+				text-decoration: none;
+			}
+			</style>
+			<style>
+			.ant-btn {
+				line-height: 1.499;
+				position: relative;
+				display: inline-block;
+				font-weight: 400;
+				white-space: nowrap;
+				text-align: center;
+				background-image: none;
+				border: 1px solid transparent;
+				-webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+				box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+				cursor: pointer;
+				-webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+				transition: all .3s cubic-bezier(.645, .045, .355, 1);
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-ms-touch-action: manipulation;
+				touch-action: manipulation;
+				height: 20px;
+				padding: 4px 12px;
+				margin:2px 2px;
+				font-size: 14px;
+				border-radius: 4px;
+				color: rgba(0,0,0,0.65);
+				background-color: #fff;
+				border-color: #d9d9d9;
+			}
+
+			.ant-btn-primary {
+				color: #fff;
+				background-color: #1890ff;
+				border-color: #1890ff;
+				text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+				-webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+				box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+			}
+			.ant-btn-blue {
+				width:90px;
+				height:30px;
+				color:#FFFFFF;
+				background-color: #1B1D3D;
+				border:1px solid #99D3F5;
+				line-height: 20px;
+				text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+				-webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+				box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+			}
+			</style>
+
+			
+	</head>
+
+	<body>
+		<div class="main-page-wrapper">
+
+			<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+			</div>
+
+
+
+			<!-- 
+			=============================================
+				Theme Header
+			============================================== 
+			-->
+
+			
+			<!-- 
+			=============================================
+				Theme Inner Banner
+			============================================== 
+			-->
+			<div class="inner-banner">
+				<div class="opacity">
+					<div class="container">
+						<h2>My Personpage</h2>
+						<ul>
+							<li><a href="{{url_for('returnhome')}}" class="tran3s">Home</a></li>
+						</ul>
+					</div> <!-- /.container -->
+				</div> <!-- /.opacity -->
+			</div> <!-- /.inner-banner -->
+
+
+
+			<!-- 
+			=============================================
+				Our Instructors Profile
+			============================================== 
+			-->
+			<div class="our-instructor-profile">
+				<div class="container">
+					{% include 'user/alert-info.html' %}
+					<form action="" method="post" enctype="multipart/form-data">
+                    	<div class="row">
+							<div class="col-md-4 col-sm-6 col-xs-12">
+								{% if imagename %}
+								<img src="{{ url_for('static',filename='uploads/'+imagename) }}" width="300px" height="400px"/>
+								{% endif %}
+							</div>
+							<div class="text">
+								&nbsp;&nbsp;<input type="text"  name="u_name" value={{u_name}}>
+								<br/>
+								<br/>
+								&nbsp;&nbsp;<textarea cols="100" rows="15" name="briefinfo" onkeyup="wordStatic(this);" maxlength="500" >{{briefinfo}}</textarea>
+								<div align="right"><span id="num">0</span>/500</div>
+							</div>
+						</div>
+						<br/>
+						<span>
+							<a href="javascript:;" class="file">选择文件<input type="file"  name="selectfile"></a>
+						</span>
+						<br/>
+						<br/>
+						&nbsp;&nbsp;<textarea cols="160" rows="20" name="details" onkeyup="wordStatic2(this);" maxlength="2000">{{details}}</textarea>
+						<div align="right"><span id="num2">0</span>/2000</div>
+						<button type="submit" name="btn" class="ant-btn ant-btn-blue" >提交</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="teachers-course popular-course">
+				<div class="container">
+					<table class="table table-hover">
+						<h3>Publications:</h3>
+                            <tbody>
+                            <tr>
+                                <th>文章名</th>
+                                <th>发表时间</th>
+                                <th>文章领域</th>
+								<th>文章链接</th>
+								<th>  </th>
+                            </tr>
+                            {% for pb in publications %}
+								<tr>
+									<td>{{ pb.title }}</td>
+									<td>{{ pb.publication_time}}</td>
+									<td>{{ pb.field }}</td>
+									<td><a href="{{pb.link}}">view article</a> </td>
+									<td><a href="{{url_for('delete_article',deleteid=pb.a_id)}}">删除</a></td>
+								</tr>
+							{% endfor %}
+                            </tbody>
+					</table>
+					<br/>
+					<br/>
+					<button  name="btn" class="ant-btn ant-btn-blue" data-toggle="modal" data-target=".addArticleModal" >添加文章</button>
+				</div>
+			</div>
+
+			<div class="modal fade addArticleModal theme-modal-box" role="dialog">
+				<div class="modal-dialog">
+				    <!-- Modal content-->
+						<div class="modal-content">
+					    <div class="modal-body">
+					        <form method="post" >
+					        	<div class="wrapper">
+									<label for="title">文章标题</label>
+									<input type="text"  name="title" id="title"  placeholder="文章标题" required maxlength="200">
+									<label for="time">发表时间</label>
+					        		<input type="text" name="time" id="time" placeholder="请按此格式填写：2019-12-01" required maxlength="20">
+									<label for="field">文章领域</label>
+					        		<input type="text" name="field" id="field" placeholder="文章领域：e.g:计算机视觉" required maxlength="15">
+									<label for="link">文章链接</label>
+									<input type="text" name="link" id="link" placeholder="文章链接" required maxlength="100">
+									<button type="submit" name="btn" class="tran3s p-bg-color"  >添加</button>
+					        	</div>
+					        </form>
+					    </div> <!-- /.modal-body -->
+				    </div> <!-- /.modal-content -->
+				</div> <!-- /.modal-dialog -->
+			</div> <!-- /.signUpModal -->
+
+
+			<script>
+			function wordStatic(input) {
+			var content = document.getElementById('num');
+			if (content && input)
+			{
+				// 获取输入框输入内容长度并更新到界面
+				var value = input.value;
+				content .innerText = value.length;
+			}
+			}
+			function wordStatic2(input) {
+			var content = document.getElementById('num2');
+			if (content && input)
+			{
+				// 获取输入框输入内容长度并更新到界面
+				var value = input.value;
+				content .innerText = value.length;
+			}
+			}
+			</script>
+
+
+
+            <!--
+            =============================================
+                Teachers Course
+            ==============================================
+            -->
+
+
+		<!-- Js File_________________________________ -->
+		<!-- j Query -->
+		<script type="text/javascript" src="{{url_for('static',filename='vendor/jquery.2.2.3.min.js')}}"></script>
+		<!-- Bootstrap Select JS -->
+		<script type="text/javascript" src="{{url_for('static',filename='vendor/bootstrap-select/dist/js/bootstrap-select.js')}}"></script>
+
+		<!-- Bootstrap JS -->
+		<script type="text/javascript" src="{{url_for('static',filename='vendor/bootstrap/bootstrap.min.js')}}"></script>
+
+		<!-- Vendor js _________ -->
+		<!-- Camera Slider -->
+		<script type='text/javascript' src="{{url_for('static',filename='vendor/Camera-master/scripts/jquery.mobile.customized.min.js')}}"></script>
+	    <script type='text/javascript' src="{{url_for('static',filename='vendor/Camera-master/scripts/jquery.easing.1.3.js')}}"></script>
+	    <script type='text/javascript' src="{{url_for('static',filename='vendor/Camera-master/scripts/camera.min.js')}}"></script>
+	    <!-- Mega menu  -->
+		<script type="text/javascript" src="{{url_for('static',filename='vendor/bootstrap-mega-menu/js/menu.js')}}"></script>
+		
+		<!-- WOW js -->
+		<script type="text/javascript" src="{{url_for('static',filename='vendor/WOW-master/dist/wow.min.js')}}"></script>
+		<!-- owl.carousel -->
+		<script type="text/javascript" src="{{url_for('static',filename='vendor/owl-carousel/owl.carousel.min.js')}}"></script>
+		<!-- js count to -->
+		<script type="text/javascript" src="{{url_for('static',filename='vendor/Counter/jquery.counterup.min.js')}}"></script>
+		<script src="{{url_for('static',filename='vendor/Counter/jquery.waypoints.min.js')}}"></script>
+
+		<!-- Theme js -->
+		<script type="text/javascript" src="{{url_for('static',filename='js/theme.js')}}"></script>
+
+		</div> <!-- /.main-page-wrapper -->
+	</body>
+</html>

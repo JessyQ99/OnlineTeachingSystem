@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- For Resposive Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eskul - Responsive Bootstrap Education HTML5 Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="/static/images/fav-icon/icon.png">
+
+
+    <!-- Main style sheet -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <!-- responsive style sheet -->
+    <link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
+
+    <!-- Fix Internet Explorer ______________________________________-->
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="vendor/html5shiv.js"></script>
+    <script src="vendor/respond.js"></script>
+    <![endif]-->
+
+    <style>
+
+        .question-submit {
+            background-color: rgba(148, 255, 252, 0.1);
+        }
+
+        .question-true {
+            background-color: rgba(129, 255, 141, 0.1);
+        }
+
+        .question-false {
+            background-color: rgba(255, 167, 167, 0.1);
+        }
+
+        .question-half-true {
+            background-color: rgba(250, 255, 148, 0.1);
+        }
+
+        .course-details .details-wrapper .panel-group .panel .panel-body ul li{
+            line-height: 30px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div class="main-page-wrapper">
+
+    <!-- ===================================================
+        Loading Transition
+    ==================================================== -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
+
+
+    <!--
+    =============================================
+        Theme Header
+    ==============================================
+    -->
+    <header class="theme-menu-wrapper menu-style-one">
+        <div class="container">
+            <div class="header-wrapper clearfix">
+                <!-- Logo -->
+                <div class="logo float-left tran4s"><a href="index.html"><img src="/static/images/logo/logo.png"
+                                                                              alt="Logo"></a></div>
+
+                <!-- ============================ Theme Menu ========================= -->
+                <nav class="theme-main-menu float-right navbar" id="mega-menu-wrapper">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav">
+                            <li class="dropdown-holder menu-list"><a href="index.html" class="tran3s">Home</a>
+                                <ul class="sub-menu">
+                                    <li><a href="index.html">Home version one</a></li>
+                                    <li><a href="index-2.html">Home version Two</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Course</a>
+                                <ul class="sub-menu">
+                                    <li><a href="course-grid.html">Course grid</a></li>
+                                    <li><a href="course-list.html">Course List</a></li>
+                                    <li><a href="course-details.html">Course Details</a></li>
+                                    <li class="dropdown-holder"><a href="#">Third Level menu</a>
+                                        <ul class="second-sub-menu">
+                                            <li><a href="#">menu one</a></li>
+                                            <li><a href="#">menu two</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Pages</a>
+                                <ul class="sub-menu width-half">
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="our-teacher.html">Our teacher</a></li>
+                                    <li><a href="teachers-profile.html">teachers profile</a></li>
+                                    <li><a href="shop.html">Shop page</a></li>
+                                    <li><a href="shop-details.html">Shop Details</a></li>
+                                    <li><a href="portfolio-3-column.html">portfolio 3 column</a></li>
+                                    <li><a href="portfolio-4-column.html">portfolio 4 column</a></li>
+                                    <li><a href="pricing-plan.html">Pricing Plan</a></li>
+                                    <li><a href="faq.html">Faq Page</a></li>
+                                    <li><a href="submit_success.html">Error Page</a></li>
+                                    <li><a href="sign-up.html">Registration</a></li>
+                                    <li class="dropdown-holder"><a href="#">Third Level menu</a>
+                                        <ul class="second-sub-menu">
+                                            <li><a href="#">menu one</a></li>
+                                            <li><a href="#">menu two</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Event</a>
+                                <ul class="sub-menu">
+                                    <li><a href="event-list.html">Event List</a></li>
+                                    <li><a href="event-grid.html">Event Grid</a></li>
+                                    <li><a href="event-details.html">Event Single</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-holder menu-list"><a href="#" class="tran3s">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-grid.html">Blog grid</a></li>
+                                    <li><a href="blog-list.html">Blog List</a></li>
+                                    <li><a href="blog-details.html">blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact-us.html" class="tran3s">Contact Us</a></li>
+                            <li class="login">
+                                <button class="tran3s" data-toggle="modal" data-target=".signInModal"><i
+                                        class="flaticon-lock"></i> Login
+                                </button>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav> <!-- /.theme-main-menu -->
+            </div> <!-- /.header-wrapper -->
+        </div>
+    </header> <!-- /.theme-menu-wrapper -->
+
+    <!--
+    =============================================
+        Theme Inner Banner
+    ==============================================
+    -->
+    <div class="inner-banner">
+        <div class="opacity">
+            <div class="container">
+                <h2>{{ queset[3] }}</h2>
+                <ul>
+                    <li><a href="index.html" class="tran3s">Home</a></li>
+                    <li>/</li>
+                    <li>Courses</li>
+                </ul>
+            </div> <!-- /.container -->
+        </div> <!-- /.opacity -->
+    </div> <!-- /.inner-banner -->
+
+
+    <!--
+    =============================================
+        Course Details
+    ==============================================
+    -->
+    <div class="course-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-15 col-xs-12">
+                    <div class="details-wrapper">
+                        <div class="course-title">
+                        </div>
+                        <div class="course-info row">
+                            <div class="col-xs-3">
+                                <div>
+                                    <i class="flaticon-time"></i>
+                                    <p>开始时间</p>
+                                    <b>{{ queset[5] }}</b>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div>
+                                    <i class="flaticon-time"></i>
+                                    <p>结束时间</p>
+                                    <b>{{ queset[6] }}</b>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div>
+                                    <i class="flaticon-bookmark"></i>
+                                    <p>分值占比</p>
+                                    <b>{{ queset[7] }}%</b>
+                                </div>
+                            </div>
+                            <div class="col-xs-3">
+                                <div>
+                                    <i class="flaticon-star"></i>
+                                    <p>得分</p>
+                                    {% if not answerset %}
+                                        <b>未提交</b>
+                                    {% elif not answerset[4] %}
+                                        <b>等待批改</b>
+                                    {% else %}
+                                        <b>{{ answerset[5] }}</b>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                        </div> <!-- /.course-info -->
+
+                        <p class="p1">{{ queset[4] }}</p>
+
+                        <div class="course-info row">
+                            <div class="col-xs-12">
+                                <div>
+                                    <i class="flaticon-people"></i>
+                                    <p>评语</p>
+                                    {% if not answerset or not answerset[7] %}
+                                        <b>等待评价</b>
+                                    {% else %}
+                                        <b>{{ answerset[7] }}</b>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div> <!-- /.course-info -->
+
+                        <form action='' method='POST' onsubmit="formatInput()" enctype="multipart/form-data">
+                            <div class="curriculum-panel">
+
+                                <div class="clearfix">
+                                    <h3 class="float-left">题目</h3>
+                                </div>
+
+                                <div class="panel-group theme-accordion" id="accordionTwo">
+                                    {% if question_list['judge'] %}
+                                        <div class="panel">
+                                            <div class="panel-heading active-panel">
+                                                <h5 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionTwo" href="#collapse11"
+                                                       class="clearfix">
+                                                        <h6 class="float-left">
+                                                            判断题
+                                                        </h6>
+                                                    </a><br/>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse11" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        {% for question in question_list['judge'] %}
+                                                            <li class="clearfix">
+                                                            <span class="float-left">
+                                                                    {{ question[4] }}
+                                                                    <br/>
+                                                                    <label><input type="radio" name="{{ question[0] }}" value="T">T</label>&nbsp&nbsp&nbsp
+                                                                    <label><input type="radio" name="{{ question[0] }}" value="F">F</label>
+                                                                </span>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> <!-- /panel 1 -->
+                                    {% endif %}
+
+                                    {% if question_list['choice'] %}
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h5 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionTwo" href="#collapse22"
+                                                       class="clearfix">
+                                                        <h6 class="float-left">
+                                                            选择题
+                                                        </h6>
+                                                    </a><br/>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse22" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        {% for question in question_list['choice'] %}
+                                                            <li class="clearfix question_choice ">
+                                                                <span style="display: none">{{ question[0] }}</span>
+                                                                <span class="float-left">
+                                                                    {{ question[4] }}
+                                                                </span>
+
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> <!-- /panel 2 -->
+                                    {% endif %}
+
+                                    {% if question_list['input'] %}
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h5 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionTwo" href="#collapse33"
+                                                       class="clearfix">
+                                                        <h6 class="float-left">
+                                                            填空题
+                                                        </h6>
+                                                    </a><br/>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse33" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        {% for question in question_list['input'] %}
+                                                            <li class="clearfix question_input">
+                                                                <span style="display: none">{{ question[0] }}</span>
+                                                                <span class="float-left">{{ question[4] }}</span>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> <!-- /panel 3 -->
+                                    {% endif %}
+
+                                    {% if question_list['upload'] %}
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <h5 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordionTwo" href="#collapse44" class="clearfix">
+                                                        <h6 class="float-left">
+                                                            主观题
+                                                        </h6>
+                                                    </a><br/>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse44" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        {% for question in question_list['upload'] %}
+                                                            <li class="clearfix question_upload">
+                                                                <span style="display: none">{{ question[0] }}</span>
+                                                                <span class="float-left">{{ question[4] }}</span>
+                                                                <a id='question_{{ question[0] }}' href="{{ url_for("download_homework", user_id=user_id, queset_id=queset[0], answerset_id=answerset[2], question_id=question[0]) }}">下载</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> <!-- /panel 4 -->
+                                    {% endif %}
+
+                                    <div class="panel">
+                                        <input type="text" style="display: none" name="queset_id" value="{{ queset[0] }}">
+                                        <input type="text" style="display: none" name="user_id" value="{{ user_id }}">
+                                        <input class="btn btn-success btn-doc-header btn-lg btn-block" type="submit" value="提交">
+                                    </div>
+                                </div> <!-- end #accordionTwo -->
+                            </div> <!-- End of .curriculum-panel -->
+                        </form>
+                    </div>
+
+                </div> <!-- /.details-wrapper -->
+            </div> <!-- /.col- -->
+
+            <!-- ************************* SIDEBAR ***************************** -->
+
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.our-course -->
+
+
+<!--
+=============================================
+    Footer
+==============================================
+-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="/static/images/logo/logo2.png" alt="Logo"></a>
+                    <p>It was some time before he obtained any answer, and the reply, when made, was unpropitious.</p>
+                    <ul>
+                        <li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="" class="tran3s"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="" class="tran3s"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="" class="tran3s"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 footer-list">
+                <h6>Company</h6>
+                <ul>
+                    <li><a href="about-us.html" class="tran3s">About Us</a></li>
+                    <li><a href="blog-grid.html" class="tran3s">Blog</a></li>
+                    <li><a href="#" class="tran3s">Become a Teacher</a></li>
+                    <li><a href="contact-us.html" class="tran3s">Contact</a></li>
+                    <li><a href="faq.html" class="tran3s">Faq &amp; Plicy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-3 footer-list">
+                <h6>Product</h6>
+                <ul>
+                    <li><a href="#" class="tran3s">Education Pack</a></li>
+                    <li><a href="#" class="tran3s">Eucation Starter</a></li>
+                    <li><a href="#" class="tran3s">Features &amp; Skills</a></li>
+                    <li><a href="#" class="tran3s">Pricing</a></li>
+                    <li><a href="#" class="tran3s">Sell Your Products</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-sm-6 footer-list">
+                <h6>About us</h6>
+                <ul>
+                    <li><a href="blog-list.html" class="tran3s">Blog</a></li>
+                    <li><a href="#" class="tran3s">Toll Free Number</a></li>
+                    <li><a href="#" class="tran3s">Press Releases</a></li>
+                    <li><a href="#" class="tran3s">Jobs</a></li>
+                    <li><a href="#" class="tran3s">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 footer-subscribe">
+                <h6>Subscribe Us</h6>
+                <p>This sounded a very good reason, and Alice was quite pleased.</p>
+                <form action="#">
+                    <input type="text" placeholder="Your Email">
+                    <button class="tran3s p-bg-color"><i class="flaticon-envelope-back-view-outline"></i></button>
+                </form>
+            </div>
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <div class="bottom-footer">
+        <div class="container">
+            <ul class="float-right">
+                <li><h3><span class="counter p-color">8,997</span> Products</h3></li>
+                <li><h3><span class="counter p-color">53,701</span> Members</h3></li>
+                <li><h3><span class="counter p-color">1,119</span> Shops</h3></li>
+            </ul>
+            <p class="float-left">&copy; 2019 <a href="#" class="tran3s p-color">heloshape</a>. All rights reserved</p>
+        </div>
+    </div> <!-- /.bottom-footer -->
+</footer>
+
+
+<!-- Sign-in Modal -->
+<div class="modal fade signInModal theme-modal-box" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body clear">
+                <h3>Login with Social Networks</h3>
+                <ul class="clearfix">
+                    <li class="float-left"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a>
+                    </li>
+                    <li class="float-left"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a>
+                    </li>
+                    <li class="float-left"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li class="float-left"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> Linkedin</a>
+                    </li>
+                </ul>
+                <form action="#">
+                    <h3>Login with Site Account</h3>
+                    <div class="wrapper">
+                        <input type="text" placeholder="Username or Email">
+                        <input type="password" placeholder="Password">
+                        <ul class="clearfix">
+                            <li class="float-left">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember Me</label>
+                            </li>
+                            <li class="float-right"><a href="#" class="s-color">Lost Your Password?</a></li>
+                        </ul>
+                        <button class="p-bg-color hvr-trim">Login</button>
+                    </div>
+                </form>
+                <div><a href="sign-up.html" class="p-color tran3s">Not an account?? Sign Up</a></div>
+            </div> <!-- /.modal-body -->
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.signInModal -->
+
+
+<!-- Scroll Top Button -->
+<button class="scroll-top tran3s">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</button>
+
+
+<!-- Js File_________________________________ -->
+
+<!-- j Query -->
+<script type="text/javascript" src="/static/vendor/jquery.2.2.3.min.js"></script>
+<!-- Bootstrap Select JS -->
+<script type="text/javascript" src="/static/vendor/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
+<!-- Bootstrap JS -->
+<script type="text/javascript" src="/static/vendor/bootstrap/bootstrap.min.js"></script>
+
+<!-- Vendor js _________ -->
+<!-- Camera Slider -->
+<script type='text/javascript' src='/static/vendor/Camera-master/scripts/jquery.mobile.customized.min.js'></script>
+<script type='text/javascript' src='/static/vendor/Camera-master/scripts/jquery.easing.1.3.js'></script>
+<script type='text/javascript' src='/static/vendor/Camera-master/scripts/camera.min.js'></script>
+<!-- Mega menu  -->
+<script type="text/javascript" src="/static/vendor/bootstrap-mega-menu/js/menu.js"></script>
+
+<!-- WOW js -->
+<script type="text/javascript" src="/static/vendor/WOW-master/dist/wow.min.js"></script>
+<!-- owl.carousel -->
+<script type="text/javascript" src="/static/vendor/owl-carousel/owl.carousel.min.js"></script>
+<!-- js count to -->
+<script type="text/javascript" src="/static/vendor/Counter/jquery.counterup.min.js"></script>
+<script src="/static/vendor/Counter/jquery.waypoints.min.js"></script>
+<!-- js ui -->
+<script src="/static/vendor/jquery-ui/jquery-ui.min.js"></script>
+<!-- Fancybox -->
+<script type="text/javascript" src="/static/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+
+<!-- Theme js -->
+<script type="text/javascript" src="/static/js/theme.js"></script>
+
+<script>
+    function choiceQuestion() {
+        let lis = document.getElementsByClassName("question_choice");
+        for (let li of lis) {
+            let name = li.getElementsByTagName("span")[0].textContent;
+            let x = li.getElementsByTagName("span")[1];
+            let question = x.textContent;
+            let strings = question.split("&");
+            x.textContent = strings[0];
+            x.innerHTML += "<br/>";
+            for (let i = 1; i < strings.length; i++) {
+                x.innerHTML += "<label><input type='radio' name=" + name + " value=" + getOptional(i) + ">" + strings[i] + "</label> &nbsp&nbsp&nbsp";
+            }
+        }
+    }
+
+    function formatInput() {
+        let lis = document.getElementsByClassName("question_input");
+        for (let li of lis) {
+            let x = li.getElementsByTagName("span")[1];
+            let testInputs = x.getElementsByClassName("text");
+            let answer = "";
+            for (let i = 0; i < testInputs.length; i++) {
+                if (i < testInputs.length - 1) {
+                    answer += testInputs.item(i).value + "&";
+                } else {
+                    answer = answer.substring(0, answer.length - 1);
+                    testInputs.item(i).value = answer;
+                }
+            }
+        }
+    }
+
+    function inputQuestion() {
+        let lis = document.getElementsByClassName("question_input");
+        for (let li of lis) {
+            let name = li.getElementsByTagName("span")[0].textContent;
+            let x = li.getElementsByTagName("span")[1];
+            let question = x.textContent;
+            x.textContent = "";
+            x.innerHTML += question.replace(/{}/g, "<input class='text question_" + name + "' type='text'> &nbsp&nbsp&nbsp");
+            x.innerHTML += "<input class='text' type='text' style='display: none' name='" + name + "'>"
+        }
+    }
+
+    function uploadQuestion() {
+        let lis = document.getElementsByClassName("question_upload");
+        for (let li of lis) {
+            let name = li.getElementsByTagName("span")[0].textContent;
+            let x = li.getElementsByTagName("span")[1];
+
+            x.innerHTML += "<input class='file' type='file'  name='" + name + "" + "'>";
+        }
+    }
+
+    choiceQuestion();
+    inputQuestion();
+    uploadQuestion();
+
+    {% if answer_list %}
+        function setAnswer() {
+
+            let answer_list_word = '{{ answer_list }}';
+            console.log(answer_list_word);
+            answer_list_word = answer_list_word.replace(/&#39;/g, "").replace(/&amp;/g, "&");
+            console.log(answer_list_word);
+            let answer_list = answer_list_word.substring(2, answer_list_word.length - 2).split("), (");
+
+            for (let answer_word of answer_list) {
+                console.log(answer_word);
+                let answer = answer_word.split(',');  //bug here: answer can not include ','
+                let question_id = answer[1].trim();
+                let content = answer[2].trim();
+
+                let state = answer[4].trim();
+                let li;
+                let inputs = document.getElementsByName(question_id);
+
+                if (inputs[0].type === 'radio') {
+                    li = inputs[0].parentNode.parentNode.parentNode;
+                    for (let input of inputs) {
+                        if (input.value === content) {
+                            input.checked = true;
+                            break;
+                        }
+                    }
+                } else if (inputs[0].type === 'text') {
+                    let inputs = document.getElementsByClassName("question_" + question_id);
+                    li = inputs[0].parentNode.parentNode;
+                    let blanks = content.split('&');
+                    for (let i = 0; i < blanks.length; i++) {
+                        inputs[i].value = blanks[i];
+                        if (state === "1" && blanks[i] === "") {
+                            state = "0";
+                        }
+                    }
+                } else if (inputs[0].type === "file") {
+                    let a = document.getElementById("question_" + question_id);
+                    if(content === "" || content === "null")
+                        a.hidden = true;
+                    else
+                        a.innerText = content;
+                    continue;
+                }
+
+                if (state === "1") {
+                    li.classList.add('question-submit');
+                } else if (state === "2") {
+                    li.classList.add('question-true');
+                } else if (state === "3") {
+                    li.classList.add('question-false');
+                } else if (state === "4") {
+                    li.classList.add('question-half-true');
+                }
+            }
+        }
+        setAnswer();
+    {% endif %}
+
+    function getOptional(num) {
+        return String.fromCharCode(num + 64).toUpperCase();
+    }
+
+</script>
+
+</div> <!-- /.main-page-wrapper -->
+</body>
+</html>

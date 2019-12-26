@@ -1,0 +1,87 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+    <section class="content-header">
+        <h1>教学管理系统</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 公告管理</a></li>
+            <li class="active">公告列表</li>
+        </ol>
+    </section>
+
+    <div class="modal fade" id="addNoticeModal" theme-modal-box role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h3>权限列表</h3>
+                          <form  method="post">
+                                <h4>添加公告：</h4>
+                                <input type="textbox" name="content" maxlength="500">
+                                    <button type="submit">确认提交</button>
+                          </form>
+                    </div> <!-- /.modal-body -->
+                </div> <!-- /.modal-content -->
+            </div> <!-- /.modal-dialog -->
+        </div> <!-- /.signInModal -->
+
+
+    <section class="content" id="showcontent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">公告列表</h3>
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                  <button id="p" class="btn btn-primary" data-toggle="modal" data-target="#addNoticeModal">添加公告</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-body table-responsive no-padding">
+                        {% include 'admin/alert_info.html' %}
+
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th>公告编号</th>
+                                <th>管理员</th>
+                                <th>内容</th>
+                                <th>时间</th>
+                            </tr>
+                            {% for notice in page_notices.items %}
+                                <tr>
+                                    <td>{{notice.num}}</td>
+                                    <td>{{ notice.mid }}</td>
+                                    <td>{{ notice.content }}</td>
+                                    <td>{{ notice.time }}</td>
+                                    <td>
+                                        <a class="label label-danger" href="{{ url_for('notice_delete', delete_id=notice.num) }}">删除</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="box-footer clearfix">
+                        {% import 'admin/pagination.html' as pg %}
+                        {{ pg.render_pagination(page_notices, 'user_list') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        	<!-- Sign-in Modal -->
+
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script>
+        // 激活菜单栏
+        $(document).ready(function () {
+            $("#g-5").addClass('active');
+            $("#g-5-1").addClass('active');
+        })
+    </script>
+{% endblock %}
