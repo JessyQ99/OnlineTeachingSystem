@@ -589,7 +589,7 @@ def returnhome():
         return  redirect(url_for('homepage4'))
 
 
-@app.route('/course_infomation/<c_id><u_id>')
+@app.route('/course_infomation/<c_id>_<u_id>')
 def course_infomation(c_id, u_id):
     sql_course = "SELECT * FROM course WHERE course_id=%s" % (c_id)
     sql_teacher = "SELECT * FROM user NATURAL JOIN teaching WHERE course_id=%s" % (c_id)
@@ -609,7 +609,7 @@ def course_infomation(c_id, u_id):
     my_connect.close()
     return render_template("course_info.html", u= r_course, v=r_teacher, w=r_asistant, x=r_student, y=u_id)
 
-@app.route('/course_manage/<c_id><u_id>')
+@app.route('/course_manage/<c_id>_<u_id>')
 def course_manage(c_id, u_id):
     sql_user = "SELECT * FROM user WHERE ID=%s" % (u_id)
     sql_teacher = "SELECT * FROM teaching WHERE course_id=%s AND ID=%s" % (c_id, u_id)
@@ -690,7 +690,7 @@ def question_set_tea(c_id):
     return render_template('question_set_list.html', queset=result,course_id=c_id)
 
 
-@app.route('/course_homework/<c_id><t_id>')
+@app.route('/course_homework/<c_id>_<t_id>')
 def course_homework(c_id, t_id):
     sql_course = "SELECT * FROM course WHERE course_id=%s" % (c_id)
     sql_teacher = "SELECT * FROM user WHERE ID=%s" % (c_id)
@@ -709,7 +709,7 @@ def course_homework(c_id, t_id):
 
     return render_template("course_manage.html", u= c_id, v=t_id)
 
-@app.route('/course_set_info/<c_id><t_id>')
+@app.route('/course_set_info/<c_id>_<t_id>')
 def course_set_info(c_id, t_id):
     sql_course = "SELECT * FROM course WHERE course_id=%s" % (c_id)
 
@@ -723,7 +723,7 @@ def course_set_info(c_id, t_id):
 
     return render_template("course_set_info.html", u=r_course, v=t_id)
 
-@app.route('/course_set_asistant/<c_id><t_id>')
+@app.route('/course_set_asistant/<c_id>_<t_id>')
 def course_set_asistant(c_id, t_id):
     sql_asistant = "SELECT * FROM user NATURAL JOIN asistant WHERE course_id=%s" % (c_id)
 
@@ -737,7 +737,7 @@ def course_set_asistant(c_id, t_id):
 
     return render_template("course_set_asistant.html", u=r_asistant, v=c_id, w=t_id)
 
-@app.route('/course_set_teacher/<c_id><t_id>')
+@app.route('/course_set_teacher/<c_id>_<t_id>')
 def course_set_teacher(c_id, t_id):
     sql_teacher = "SELECT * FROM user NATURAL JOIN teaching WHERE course_id=%s" % (c_id)
 
@@ -752,7 +752,7 @@ def course_set_teacher(c_id, t_id):
 
     return render_template("course_set_teacher.html", u=r_teacher, v=c_id, w=t_id)
 
-@app.route('/course_set_student/<c_id><t_id>')
+@app.route('/course_set_student/<c_id>_<t_id>')
 def course_set_student(c_id, t_id):
     sql_student = "SELECT * FROM user NATURAL JOIN selecting WHERE course_id=%s" % (c_id)
 
@@ -766,7 +766,7 @@ def course_set_student(c_id, t_id):
 
     return render_template("course_set_student.html", u=r_student, v=c_id, w=t_id)
 
-@app.route('/course_set_group/<c_id><t_id>')
+@app.route('/course_set_group/<c_id>_<t_id>')
 def course_set_group(c_id, t_id):
     sql_group = "SELECT * FROM grouping NATURAL JOIN user WHERE course_id=%s ORDER BY group_id ASC" % (c_id)
 
@@ -781,7 +781,7 @@ def course_set_group(c_id, t_id):
 
     return render_template("course_set_group.html", u=r_group, v=c_id, w=t_id)
 
-@app.route('/random_group/<c_id><t_id>', methods=["GET","POST"])
+@app.route('/random_group/<c_id>_<t_id>', methods=["GET","POST"])
 def random_group(c_id, t_id):
     if request.method == "POST":
         max_number = request.form["group_max"]
@@ -830,7 +830,7 @@ def random_group(c_id, t_id):
 
         return render_template("course_info.html", u=r_course, v=r_teacher, w=r_asistant, x=r_student, y=t_id)
 
-@app.route('/course_setinfo_result/<c_id><t_id>',methods=["GET","POST"])
+@app.route('/course_setinfo_result/<c_id>_<t_id>',methods=["GET","POST"])
 def course_setinfo_result(c_id, t_id):
     if request.method == "POST":
         c_name = request.form["name"]
@@ -878,7 +878,7 @@ def course_setinfo_result(c_id, t_id):
 
         return render_template("course_set_info.html", u=r_course, v=t_id)
 
-@app.route('/course_setasistant_result/<c_id><t_id>',methods=["GET","POST"])
+@app.route('/course_setasistant_result/<c_id>_<t_id>',methods=["GET","POST"])
 def course_setasistant_result(c_id, t_id):
     if request.method == "POST":
         a_name = request.form["add_name"]
@@ -916,7 +916,7 @@ def course_setasistant_result(c_id, t_id):
 
         return render_template("course_set_asistant.html", u=r_asistant, v=c_id, w=t_id)
 
-@app.route('/course_setteacher_result/<c_id><t_id>',methods=["GET","POST"])
+@app.route('/course_setteacher_result/<c_id>_<t_id>',methods=["GET","POST"])
 def course_setteacher_result(c_id, t_id):
     if request.method == "POST":
         a_name = request.form["add_name"]
@@ -954,7 +954,7 @@ def course_setteacher_result(c_id, t_id):
 
         return render_template("course_set_teacher.html", u=r_teacher, v=c_id, w=t_id)
 
-@app.route('/course_setstudent_result/<c_id><t_id>',methods=["GET","POST"])
+@app.route('/course_setstudent_result/<c_id>_<t_id>',methods=["GET","POST"])
 def course_setstudent_result(c_id, t_id):
     if request.method == "POST":
         a_name = request.form["add_name"]
@@ -991,7 +991,7 @@ def course_setstudent_result(c_id, t_id):
 
         return render_template("course_set_student.html", u=r_student, v=c_id, w=t_id)
 
-@app.route('/course_setgroup_result/<c_id><t_id>',methods=["GET","POST"])
+@app.route('/course_setgroup_result/<c_id>_<t_id>',methods=["GET","POST"])
 def course_setgroup_result(c_id, t_id):
     if request.method == "POST":
         a_name = request.form["add_name"]
@@ -1080,7 +1080,7 @@ def course_table(u_id):
         my_connect.close()
         return render_template("course_table.html", u=result_course, v=result_teacher, user_id = u_id )
 
-@app.route('/course_build/<c_id><t_id>')
+@app.route('/course_build/<c_id>_<t_id>')
 def course_build(c_id,t_id):
     return render_template("course_build.html", course_id=c_id, teacher_id = t_id)
 
@@ -1240,7 +1240,7 @@ def question_modify():
     print(result)
     return render_template("/question_set_list.html", queset = result, course_id = course_id)
 
-@app.route('/queslib_in/<course_id><t_id>')
+@app.route('/queslib_in/<course_id>_<t_id>')
 def queslib_in(course_id, t_id):
     my_connect = pymysql.connect(my_host, my_user, my_password, my_db)
     cursor = my_connect.cursor()
@@ -1783,7 +1783,7 @@ def play(filename):
     return render_template('play.html', url=url, name=filename, tp=_type)
 
 
-@app.route('/question_set_list/<c_id><s_id>')
+@app.route('/question_set_list/<c_id>_<s_id>')
 def question_set_list(c_id, s_id):
     results = get_queset_list(c_id)
     return render_template('stu_question_set_list.html', user_id=s_id, course_id=c_id, queset=results)
@@ -2285,7 +2285,7 @@ def post_message():
 
     return render_template('visitor_message.html')
 
-@app.route('/discussion/<c_id><u_id>')
+@app.route('/discussion/<c_id>_<u_id>')
 def discussion(c_id, u_id):
     print(c_id)
     my_connect = pymysql.connect(my_host, my_user, my_password, my_db)
