@@ -354,6 +354,8 @@ def login():
                 flash('非本校用户无注册权限！',category='err')
             elif  User.query.filter_by(name=register_name).first():
                 flash('已存在对应账号！',category='err')
+            elif User.query.filter_by(ID=ID).first():
+                flash('一个学工号只能注册一个账号！', category='err')
             elif repeat_password!=register_password:
                 flash('两次输入密码不一致！',category='err')
             else:
@@ -2031,7 +2033,7 @@ def user_list(page=None):
 def user_delete(delete_id=None):
     users = User.query.filter_by(name=delete_id)
     for u in users:
-        if u.type!='A':
+        if u.type!='A' or current_user.name=='admin001':
             u.legality=False
             db1.session.add(u)
             # 删除后闪现消息
