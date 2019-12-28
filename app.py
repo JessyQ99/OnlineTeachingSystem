@@ -1601,6 +1601,7 @@ def upload_file():
     _date = request.cookies.get('date')
     app.config['UPLOADED_FILES_DEST'] = path.join(dir, str(course_id))
     configure_uploads(app, files)
+    db.ping(reconnect=True)
     if request.method == 'POST' and 'file' in request.files:
         try:
             info = request.form.to_dict()
@@ -1669,6 +1670,7 @@ def chapters_modify():
     course_id = request.cookies.get('course_id')
     user_id = request.cookies.get('user_id')
     user_type = request.cookies.get('user_type')
+    db.ping(reconnect=True)
     if request.method == 'POST':
         sql = "select max_chapters from numberofchapters where course_id=%s" % course_id
         cursor.execute(sql)
@@ -1707,6 +1709,7 @@ def modify():
     _type = filename.rsplit('.', 1)[1].lower()
     name = filename.rsplit('.', 1)[0]
     res=1
+    db.ping(reconnect=True)
     if "restriction" in info:
         res = 0
     if request.form['chapters']:
@@ -1726,6 +1729,7 @@ def modify():
 
 @app.route('/sources/delete', methods=['POST'])
 def delete():
+    db.ping(reconnect=True)
     filename=request.form['source']
     url= app.config['UPLOADED_FILES_DEST'] + "/" + filename
     _type = filename.rsplit('.', 1)[1].lower()
@@ -1740,6 +1744,7 @@ def delete():
 
 @app.route('/getfile/<filename>')
 def getfile(filename):
+    db.ping(reconnect=True)
     _type = filename.rsplit('.', 1)[1].lower()
     name = filename.rsplit('.', 1)[0]
     sql="select browse_restrict from source where type='%s' and name='%s'" % (_type, name)
@@ -1755,6 +1760,7 @@ def getfile(filename):
 def show(filename):
     if filename is None:
         return render_template('404.html')
+    db.ping(reconnect=True)
     course_id = request.cookies.get('course_id')
     _type = filename.rsplit('.', 1)[1].lower()
     name = filename.rsplit('.', 1)[0]
@@ -1772,6 +1778,7 @@ def show(filename):
 def play(filename):
     if filename is None:
         return render_template('404.html')
+    db.ping(reconnect=True)
     course_id = request.cookies.get('course_id')
     _type = filename.rsplit('.', 1)[1].lower()
     name = filename.rsplit('.', 1)[0]
