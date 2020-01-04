@@ -1803,6 +1803,7 @@ def question_set():
     if request.method == 'GET':
         queset_id = request.args.get('queset_id')
         user_id = request.args.get('user_id')
+        course_id = request.args.get('course_id')
         queset = get_queset(queset_id)
         question_list = get_question_list(queset_id)
         answerset = get_answerset(user_id, queset_id)
@@ -1810,9 +1811,9 @@ def question_set():
             answerset_id = answerset[2]
             answer_list = get_answer_list(answerset_id)
             # print(answer_list)
-            return render_template('stu_question_set.html', queset=queset, answerset=answerset, question_list=question_list, answer_list=answer_list, user_id=user_id)
+            return render_template('stu_question_set.html', queset=queset, answerset=answerset, question_list=question_list, answer_list=answer_list, user_id=user_id, course_id=course_id)
         else:
-            return render_template('stu_question_set.html', queset=queset, answerset=answerset, question_list=question_list, answer_list=None, user_id=user_id)
+            return render_template('stu_question_set.html', queset=queset, answerset=answerset, question_list=question_list, answer_list=None, user_id=user_id, course_id=course_id)
     elif request.method == 'POST':
         form = request.form.to_dict()
         upload_question_id = get_upload_question_id(form['queset_id'])
