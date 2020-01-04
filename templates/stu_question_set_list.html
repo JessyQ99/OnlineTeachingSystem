@@ -170,7 +170,7 @@
                         <div class="single-event clearfix">
                             <div class="image-box float-left"><img src="/static/images/event/7.jpg" alt=""></div>
                             <div class="text float-left center-block ">
-                                <h4><a href="{{ url_for('question_set', queset_id=row[0], user_id=user_id) }}" class="tran3s">{{ row[3] }}</a></h4>
+                                <h4><a href="{{ url_for('question_set', queset_id=row[0], user_id=user_id, course_id=course_id) }}" class="tran3s">{{ row[3] }}</a></h4>
                                 <p>{{ row[4] }}</p>
                                 <ul class="clearfix">
                                     <li class="float-left"><i class="flaticon-time"></i>{{ row[5] }} - {{ row[6] }}
